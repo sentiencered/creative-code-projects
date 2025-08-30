@@ -7,6 +7,15 @@ canvas{
 }
 
 h1 {
+    font-family: monospace;
     font-size: 40px;
-    color: rgb(100, 100, 207);
+    color: rgb(194, 215, 226);
+}
+h2 {
+    font-family: monospace;
+    color: rgba(194, 215, 226, 0.735);
+}
+p {
+    font-family: monospace;
+    color: rgb(194, 215, 226);
 }
