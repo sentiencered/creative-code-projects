@@ -23,7 +23,7 @@ function draw() {
       ellipse(a, b, o, o);
     }
   }
-  fill(75, 95, 130, 200);
+  fill(75, 95, 130, 230);
   for(x=f; x<width; x+=f){
     for(y=f; y<height; y+=f){
       let d= f* noise((x+f), (y+f), frameCount/200);

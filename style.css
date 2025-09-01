@@ -3,6 +3,7 @@ canvas{
     left: 0;
     top: 0;
     z-index: -1;
+    cursor: crosshair;
     /* fullscreen canvas behind other stuff */
 }
 
@@ -12,6 +13,7 @@ canvas{
     margin-top: 1.75em;
     border-top: 20px dotted rgba(194, 215, 226, 0);
     margin-bottom: 1.75em;
+    cursor: crosshair;
 }
 
 .contain{
