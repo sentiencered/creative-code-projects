@@ -1,4 +1,4 @@
-console.log("hello")
+// console.log("hello")
 
 function setup() {
   //let s= 700
