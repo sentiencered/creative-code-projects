@@ -1,0 +1,127 @@
+body {
+    background-color: rgb(207, 229, 241);
+}
+
+canvas{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    cursor: crosshair;
+    /* fullscreen canvas behind other stuff */
+}
+
+.space {
+    width: 100%;
+    margin: auto;
+    margin-top: 1.75em;
+    border-top: 20px dotted rgba(194, 215, 226, 0);
+    margin-bottom: 1.75em;
+    cursor: crosshair;
+}
+
+.contain{
+    width: 90%;
+    margin: auto;
+    place-content: center;
+    text-align: left;
+    cursor: crosshair;
+}
+
+.thirds {
+    width: 100%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 15px;
+    cursor: crosshair;
+}
+
+/* .twos {
+    width: 100%;
+    display: grid;
+    text-align: left;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 15px;
+    cursor: crosshair;
+} */
+
+.button {
+    margin: auto;
+    display: flex;
+    /* justify-content: center; */
+    gap: 15px;
+    margin-bottom: 2em;
+}
+
+.button a:link, .button a:visited {
+    border-radius: 35px;
+    background-color: rgba(194, 215, 226, 0.505);
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.25s;
+    font-family: monospace;
+    font-size: 16px;
+    color: rgb(75, 95, 130);
+    cursor: crosshair;
+}
+
+.button a:hover, .button a:active {
+    /* background-color: rgb(207, 229, 241, 0.505);
+    color: rgb(199, 0, 57); */
+    color: rgb(207, 229, 241);
+    background-color: rgb(199, 0, 57, 0.85);
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 40px;
+    color: rgb(75, 95, 130);
+    transition-duration: 0.25s;
+}
+h1:hover{
+    font-size: 40px;
+    /* color: rgb(194, 215, 226); */
+    color: rgb(75, 95, 130, .75);
+}
+
+h2 {
+    font-family: monospace;
+    color: rgb(95, 120, 160);
+    transition-duration: 0.25s;
+}
+h2:hover{
+    color: rgb(95, 120, 160, .75);
+}
+
+/* p {
+    font-family: monospace;
+    font-size: 16px;
+    color: rgb(194, 215, 226);
+    transition-duration: 0.25s;
+}
+p:hover{
+    font-family: monospace;
+    color: rgb(199, 0, 57);
+} */
+
+li {
+    font-family: monospace;
+    font-size: 16px;
+    color: rgb(75, 95, 130);
+    text-decoration: none;
+    transition-duration: 0.25s;
+}
+
+a:link, a:visited {
+    color: rgb(75, 95, 130);
+    text-decoration: none;
+    transition-duration: 0.25s;
+}
+a:hover, a:active{
+    color: rgb(199, 0, 57);
+}

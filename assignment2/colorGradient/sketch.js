@@ -2,9 +2,10 @@ let col1, col2;
 
 function setup() {
   createCanvas(400, 400);
-  background(220);
-    col1 = color(0, 0, 255);
-    col2 = color(255, 0, 0);
+  background(250);
+    col1 = color(255, 255, 0);
+    col2 = color(255, 0, 255);
+    noStroke();
 }
 
 //17 rectangles, 2 colors (randomized on click), lerp
@@ -21,7 +22,7 @@ function draw() {
     colStep=i/(n-1);
     let col=lerpColor(col1, col2, colStep);
     fill(col);
-    rect(x, y, step, height-(2*m));
+    rect(x, y, (step -2), height-(2*m));
   }
 }
 
