@@ -1,11 +1,10 @@
 
 let x;
 let y;
-let nl;
 let ns = 1;
 let n;
 let s;
-let fs;
+// let fs;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -15,7 +14,6 @@ function setup() {
   noFill();
   x = width/2;
   y = height/2;
-  nl = width;
   s = width/2;
 }
 
@@ -27,12 +25,12 @@ function draw() {
   
   n = ns*(frameCount/100);
   
-  x = nl * noise(n + 100);
-  y = nl * noise(n + 1000);
-  s = nl * noise(n);
+  x = width * noise(n + 100);
+  y = height * noise(n + 1000);
+  s = (width+height)/2 * noise(n);
   
-  fs = color(105, 125, 165, random(0, 3));
-//   75, 95, 130
+  // fs = color(105, 125, 165, random(0, 3));
+  // 75, 95, 130
   // f = color(180, 200, 235, random(0, 5));
   f = color(random(105, 180), 125, random(165, 235), random(0, 10));
   

@@ -17,33 +17,23 @@ function setup() {
 function draw() {
   //1/4 chance to move up/down/left/right, leave trail
   dir = floor(random(1, 5));
-  // console.log(dir);
   
   // x = constrain(x, 0, width);
   // y = constrain(y, 0, height);
-  
-  if(dir == 1){
-    for(i=0; i<d; i++){
+
+  for(i=0; i<d; i++){
+    if(dir == 1){
       x+=i;
-      square(x, y, s);
     }
-  }
-  if(dir == 2){
-    for(i=0; i<d; i++){
+    if(dir == 2){
       y+=i;
-      square(x, y, s);
     }
-  }
-  if(dir == 3){
-    for(i=0; i<d; i++){
+    if(dir == 3){
       x-=i;
-      square(x, y, s);
     }
-  }
-  if(dir == 4){
-    for(i=0; i<d; i++){
+    if(dir == 4){
       y-=i;
-      square(x, y, s);
     }
+    square(x, y, s);
   }
 }

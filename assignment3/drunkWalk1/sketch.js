@@ -26,39 +26,6 @@ function draw() {
   x+=dx;
   y+=dy;
   
-//   dx = random(-5, 5);
-//   dy = random(-5, 5);
-  
-//   if(dx>=0){
-//     for(i=0; i<dx; i++){
-//       x++;
-//       // x+=i;
-//       ellipse(x, y, s);
-//     }
-//   }
-//   else{
-//     for(i=0; i>dx; i--){
-//       x--;
-//       // x+=i;
-//       ellipse(x, y, s);
-//     }
-//   }
-  
-//   if(dy>=0){
-//     for(i=0; i<dy; i++){
-//       y++;
-//       // y+=i;
-//       ellipse(x, y, s);
-//     }
-//   }
-//   else{
-//     for(i=0; i>dy; i--){
-//       y--;
-//       // y+=i;
-//       ellipse(x, y, s);
-//     }
-//   }
-  
   //update current position with small random displacement in x and y, leave trail
   
   ellipse(x, y, s);
