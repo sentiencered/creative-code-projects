@@ -17,9 +17,9 @@ function setup() {
 function draw() {
   //1/4 chance to move up/down/left/right, leave trail
   dir = floor(random(1, 5));
-  
-  // x = constrain(x, 0, width);
-  // y = constrain(y, 0, height);
+
+  // x = constrain(x, 0, width+1);
+  // y = constrain(y, 0, height+1);
 
   for(i=0; i<d; i++){
     if(dir == 1){

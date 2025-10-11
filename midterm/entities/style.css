@@ -1,0 +1,16 @@
+html, body {
+  background-color: rgb(14, 14, 14);
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 0 20px 20px -10px rgba(0, 0, 0, .75);
+}
