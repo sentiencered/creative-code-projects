@@ -40,6 +40,12 @@ function setup() {
   // numEntities = 3;
   numSpots = floor((width*height)/50000);
   maxEntities = floor((width*height)/5000);
+
+  if((width * height) > 3750000){
+    numEntities = 150;
+    maxEntities = 750;
+    numSpots = 75;
+  }
   
   for(let i=0; i<numEntities; i++){
     let e = new Entity();
