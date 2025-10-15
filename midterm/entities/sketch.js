@@ -23,11 +23,18 @@ let eyes = false;
 let marginX = 300;
 let marginY = 200;
 
+let font;
+
+function preload() {
+  font = loadFont('RobotoMono-Regular.ttf');
+}
+
 function setup() {
   createCanvas((windowWidth - marginX), (windowHeight - marginY));
   // createCanvas(500, 500);
   colorMode(HSB);
-  textFont("Roboto Mono");
+  // textFont("Roboto Mono");
+  textFont(font);
   
   numEntities = floor((width*height)/25000);
   // numEntities = 3;
