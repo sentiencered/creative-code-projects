@@ -50,11 +50,16 @@ function setup() {
     let sp = new Spot();
     spots.push(sp);
   }
-  
 }
 
 function draw() {
   background(0);
+
+  if((width * height) > 3750000){
+    numEntities = 150;
+    maxEntities = 750;
+    numSpots = 75;
+  }
   
   for(let i=0; i<spots.length; i++){
     let sp = spots[i];
