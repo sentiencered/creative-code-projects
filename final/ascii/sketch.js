@@ -58,7 +58,7 @@ function setup() {
   let req = createP('upload file recommendations: high contrast, low resolution square image (50-200px is best)');
   req.position(width+addX, addY*4);
 
-  let dir = createP('INSTRUCTIONS: <br> 1. choose an image to upload <br> 2. adjust the settings as desired <br> 3. enter a file name if desired (otherwise will default to "ascii") <br> 4. press "EXPORT" or hit the space bar to save as an .svg');
+  let dir = createP('INSTRUCTIONS: <br> 1. choose an image to upload <br> 2. adjust the settings as desired <br> 3. enter a file name (otherwise will default to "asciiPlot") <br> 4. press "EXPORT" or hit the space bar to save as an .svg');
   dir.position(width+addX, addY*13);
   
   input = createFileInput(handleImage);
@@ -129,7 +129,7 @@ function draw(){
     FILENAME = textInput.value();
   }
   else{
-    FILENAME = 'ascii';
+    FILENAME = 'asciiPlot';
   }
   
   if (bDoExportSvg) {
