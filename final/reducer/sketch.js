@@ -54,7 +54,7 @@ function setup() {
   button2.position(width+addX, 300);
   button2.mousePressed(exportReduced);
   
-  let p4 = createP('INSTRUCTIONS: <br> optimized for square images, other ratios may see errors <br> 1. choose an image to reduce <br> 2. adjust pixel slider to desired width and press "REDUCE" <br> 3. enter file name if desired (otherwise will default to "pixelated") <br> 4. press "EXPORT" to save image as a .png');
+  let p4 = createP('INSTRUCTIONS: <br> optimized for square images, other ratios may see errors <br> 1. choose an image to reduce <br> 2. adjust pixel slider to desired width and press "REDUCE" <br> 3. enter file name (otherwise will default to "pixelated") <br> 4. press "EXPORT" to save image as a .png');
   p4.position(width+addX, 350);
 
   //slider updating:
