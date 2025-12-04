@@ -71,7 +71,7 @@ function draw() {
   }
   
   if(isReduced){
-    p3.html('warning: image already reduced (increasing pixels will not increase resolution)');
+    p3.html('warning: image already reduced (increasing pixels will not restore resolution)');
   }
 }
 

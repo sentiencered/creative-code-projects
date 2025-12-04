@@ -210,3 +210,7 @@ function keyPressed(){
     draw();
   }
 }
+
+function mouseClicked(){
+  draw();
+}
