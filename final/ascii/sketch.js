@@ -23,6 +23,7 @@ let font;
 
 let w;
 let h;
+let isTall;
 
 //adjustable variables:
 let s = .5; //font size
@@ -52,11 +53,11 @@ function setup() {
   let t = createP('IMAGE TO ASCII');
   t.position(width+addX, addY*2);
 
-  let des = createP('plottable ascii image converter: choose an image to upload, click the mouse to update the converter');
+  let des = createP('plottable ascii image converter: choose an image to upload, click the mouse to update the converter <br> <br> upload file recommendations: high contrast (strong black/white point), low resolution image (50-200px is best)');
   des.position(width+addX, addY*3);
 
-  let req = createP('upload file recommendations: high contrast, low resolution square image (50-200px is best)');
-  req.position(width+addX, addY*4);
+  // let req = createP('upload file recommendations: high contrast (strong black/white point), low resolution image (50-200px is best)');
+  // req.position(width+addX, addY*4);
 
   let dir = createP('INSTRUCTIONS: <br> 1. choose an image to upload <br> 2. adjust the settings as desired <br> 3. enter a file name (otherwise will default to "asciiPlot") <br> 4. press "EXPORT" or hit the space bar to save as an .svg');
   dir.position(width+addX, addY*13);
@@ -149,8 +150,23 @@ function drawSomething() {
   
   // image(img, m/2, m/2, width - m, height - m)4
   
-  w = (width-m)/img.width; //pixel step width
-  h = (height-m)/img.height; //pixel step height
+  if(img.width >= img.height){
+    // isTall = false;
+    let r = img.height/img.width;
+    w = (width-m)/img.width; //pixel step width
+    h = r* ((height-m)/img.height); //pixel step height
+  }
+  else{
+    // isTall = true;
+    let r = img.width/img.height;
+    h = (height-m)/img.height; //pixel step height
+    w = r* ((width-m)/img.width); //pixel step width
+  }
+
+  //for square:
+  // w = (width-m)/img.width; //pixel step width
+  // h = (height-m)/img.height; //pixel step height
+
   img.loadPixels();
   
   for(let i = 0; i < img.width; i++){

@@ -13,6 +13,7 @@ let p3;
 let button;
 let button2;
 let addX = 15;
+let isTall = false;
 
 function preload(){
   img = loadImage("upload.jpg");
@@ -54,7 +55,7 @@ function setup() {
   button2.position(width+addX, 300);
   button2.mousePressed(exportReduced);
   
-  let p4 = createP('INSTRUCTIONS: <br> optimized for square images, other ratios may see errors <br> 1. choose an image to reduce <br> 2. adjust pixel slider to desired width and press "REDUCE" <br> 3. enter file name (otherwise will default to "pixelated") <br> 4. press "EXPORT" to save image as a .png');
+  let p4 = createP('INSTRUCTIONS: <br> 1. choose an image to reduce <br> 2. adjust pixel slider to desired width and press "REDUCE" <br> 3. enter file name (otherwise will default to "pixelated") <br> 4. press "EXPORT" to save image as a .png');
   p4.position(width+addX, 350);
 
   //slider updating:
@@ -67,11 +68,21 @@ function setup() {
 
 function draw() {
   if(isUploaded && !isReduced){
-    image(img, 0, 0, img.width, img.height);
+    // image(img, 0, 0, img.width, img.height);
+    if(img.width >= img.height){
+      isTall = false;
+      let r = img.height/img.width;
+      image(img, 0, 0, width, r*height);
+    }
+    else{
+      isTall = true;
+      let r = img.width/img.height;
+      image(img, 0, 0, r*width, height);
+    }
   }
   
   if(isReduced){
-    p3.html('warning: image already reduced (increasing pixels will not restore resolution)');
+    p3.html('warning: image already reduced (increasing pixels will not restore detail)');
   }
 }
 
@@ -93,8 +104,14 @@ function reduce(){
   
   // image(img, 0, 0, img.width, img.height);
   
-  w = width/img.width; //pixel step width
-  h = height/img.height; //pixel step height
+  if(isTall == true){
+    h = height/img.height;
+    w = h;
+  }
+  else{
+    w = width/img.width; //pixel step width
+    h = w;
+  }
   
   for(let i = 0; i < img.width; i++){
     for(let j = 0; j < img.height; j++){
@@ -108,7 +125,8 @@ function reduce(){
       
       noStroke();
       fill(avg);
-      square(i * w, j * h, w); //bw pixelated image
+      // square(i * w, j * h, w); //bw pixelated image
+      rect(i * w, j * h, w, h);
       pop();
     }
   }
@@ -119,6 +137,7 @@ function handleImage(file) {
     const url = URL.createObjectURL(file.file);
     loadImage(url, loadedImg => {
       img = loadedImg;
+      clear();
       img.loadPixels();
     });
     isUploaded = true;
